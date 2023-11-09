@@ -1,0 +1,106 @@
+.menu {
+  box-sizing: border-box;
+}
+
+.menu-item {
+  padding: 7px 15px;
+  height: 50px;
+  border-radius: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  transition: background 0.3s ease-out;
+
+  &:hover {
+    background: rgba(#ff39eb, 0.15);
+  }
+
+  &__sign {
+    height: 23px;
+    width: 23px;
+    background: transparent url("../img/circle.svg") no-repeat center / cover;
+    margin-right: 12px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    max-width: calc(100% - 40px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    display: -webkit-box;
+    line-clamp: 2;
+    box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@keyframes showMenu {
+  0% {
+    transform: translateX(-260px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes closeMenu {
+  0% {
+    display: block;
+    transform: translateX(0);
+  }
+
+  100% {
+    display: none;
+    transform: translateX(-260px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu {
+    border-right: 2px solid rgba(#000, 0.14);
+  }
+}
+
+@media (min-width: 1024px) {
+    .menu {
+        width: 310px;
+        padding: 20px 30px;
+      }
+}
+
+@media (max-width: 1023px) {
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    z-index: 10;
+    background: #d6bdff;
+    padding: 70px 10px 20px;
+    
+
+    &__wrapper {
+      padding: 0 10px;
+      height: 100%;
+      overflow-y: auto;
+    }
+  }
+
+  .menu.menu_hidden {
+    display: none;
+    transform: translateX(-260px);
+    animation: closeMenu 0.3s ease-out;
+  }
+
+  .menu.menu_active {
+    animation: showMenu 0.3s ease-out;
+  }
+}

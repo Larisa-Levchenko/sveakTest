@@ -1,0 +1,43 @@
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: rgba(#d6bdff, 0.6);
+  overflow: hidden;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.app.app_active {
+  .section {
+    overflow-y: hidden;
+  }
+}
+
+@media (min-width: 1024px) {
+  .app {
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 1023px) {
+  .app {
+    background: rgba(#95d9ff, 0.6);
+  }
+
+  .section {
+    overflow-y: auto;
+  }
+}
+
+
+@media (max-width: 639px) {
+  .app {
+    background: rgba(#adfcc8, 0.6);
+  }
+}

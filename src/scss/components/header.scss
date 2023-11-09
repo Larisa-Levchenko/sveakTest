@@ -1,0 +1,53 @@
+.header {
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    width: fit-content;
+    align-self: flex-end;
+  }
+
+  &__item {
+    &_triangle {
+      height: 25px;
+      width: 20px;
+      background: transparent url("../img/triangle.svg") no-repeat center /
+        cover;
+    }
+
+    &_circle {
+      height: 23px;
+      width: 23px;
+      background: transparent url("../img/circle.svg") no-repeat center / cover;
+    }
+
+    &_square {
+      height: 21px;
+      width: 21px;
+      background: transparent url("../img/square.svg") no-repeat center / cover;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    border-bottom: 2px solid rgba(#000, 0.14);
+  }
+}
+
+@media (max-width: 1023px) {
+  .header {
+    background: #95d9ff;
+  }
+}
+
+@media (max-width: 639px) {
+  .header {
+    background: #adfcc8;
+  }
+}

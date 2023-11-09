@@ -1,0 +1,99 @@
+.card {
+  background: rgba(#000, 0.1);
+  color: rgba(#000, 0.7);
+  border-radius: 10px;
+  padding: 15px 12px;
+  height: 128px;
+  box-sizing: border-box;
+  transition: background, color 0.3s ease-out;
+
+  &:hover {
+    background: rgba(#ff39eb, 0.15);
+    color: #000;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    display: -webkit-box;
+    line-clamp: 6;
+    -moz-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+
+    box-orient: vertical;
+  }
+}
+
+@media (min-width: 1280px) {
+  .card {
+    &:nth-child(5n + 1):nth-last-child(n + 4) {
+      display: none;
+    }
+
+    &:nth-child(5n + 2):nth-last-child(-n + 3) {
+      display: none;
+    }
+
+    &:nth-child(5n + 3):nth-last-child(-n + 2) {
+      display: none;
+    }
+
+    &:nth-child(5n + 4):nth-last-child(1) {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .card {
+    &:nth-child(4n + 1):nth-last-child(-n + 3) {
+      display: none;
+    }
+
+    &:nth-child(4n + 2):nth-last-child(-n + 2) {
+      display: none;
+    }
+
+    &:nth-child(4n + 3):nth-last-child(1) {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .card {
+    &:hover {
+      background: #95d9ff;
+    }
+
+    &:nth-child(3n + 1):nth-last-child(-n+2) {
+      display: none;
+    }
+
+    &:nth-child(3n + 2):nth-last-child(1) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  .card {
+    height: 115px;
+    &:hover {
+      background: #adfcc8;
+    }
+
+    &:nth-child(2n + 1):nth-last-child(1) {
+      display: none;
+    }
+
+    &__text {
+      line-clamp: 5;
+      -webkit-line-clamp: 5;
+    }
+  }
+}
